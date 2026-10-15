@@ -1,0 +1,2 @@
+// Static page frame the planner fills in.
+export const SHELL_HTML = "<div class=\"app\">\n  <aside class=\"rail\" id=\"rail\"></aside>\n  <main class=\"main\" id=\"main\"><div class=\"loading\">Loading your planner\u2026</div></main>\n</div>\n<div class=\"drawer-wrap\" id=\"drawerWrap\" hidden>\n  <div class=\"scrim\" data-action=\"close-drawer\"></div>\n  <section class=\"drawer\" id=\"drawer\" role=\"dialog\" aria-modal=\"true\" aria-labelledby=\"drTitle\"></section>\n</div>\n<div class=\"toast\" id=\"toast\" role=\"status\" hidden></div>";

@@ -1,0 +1,11 @@
+@import './planner.css';
+
+/* Base reset (the claude.ai host used to provide this) */
+:root { color-scheme: light; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+html, body { margin: 0; }
+body { font: 14px/1.5 system-ui, -apple-system, 'Segoe UI', sans-serif; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+.sa-hide { display: none !important; }
+.login-wrap { min-height: 100vh; display: grid; place-items: center; padding: 24px 16px; background: var(--bg); }
+.login-foot { margin-top: 14px; font-size: 12px; color: var(--ink-3); text-align: center; }
