@@ -2,19 +2,23 @@
   "name": "rfid-rnd-planner",
   "version": "1.0.0",
   "private": true,
-  "description": "RFID R&D Planner – projects, tasks, follow-ups, resource load and Gantt export",
+  "description": "RFID R&D Planner \u2013 projects, tasks, follow-ups, resource load and Gantt export",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3000",
     "build": "next build",
-    "start": "next start"
+    "start": "node server.js",
+    "start:next": "next start -p 3000"
   },
-  "engines": { "node": ">=18.18" },
+  "engines": {
+    "node": ">=18.18"
+  },
   "dependencies": {
     "better-sqlite3": "11.3.0",
     "jspdf": "2.5.2",
     "next": "14.2.15",
     "nodemailer": "6.9.15",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "xlsx": "0.18.5"
   }
 }

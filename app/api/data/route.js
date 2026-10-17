@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { currentUser } from '@/lib/auth';
 import { readChanges, writeDoc, Forbidden } from '@/lib/store';
+import { startAutoBackup } from '@/lib/backup';
+import { startStakeholderUpdates } from '@/lib/stakeholders';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -8,6 +10,8 @@ export const dynamic = 'force-dynamic';
 export async function GET(req) {
   const user = currentUser();
   if (!user) return NextResponse.json({ error: 'signed_out' }, { status: 401 });
+  startAutoBackup();
+  startStakeholderUpdates();
   const since = Number(new URL(req.url).searchParams.get('since') || 0) || 0;
   return NextResponse.json(readChanges(user, since), { headers: { 'Cache-Control': 'no-store' } });
 }

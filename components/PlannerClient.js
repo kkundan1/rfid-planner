@@ -10,6 +10,7 @@ export default function PlannerClient({ me }) {
       installShim(me);
       const { jsPDF } = await import('jspdf');
       window.jspdf = { jsPDF };
+      window.__loadXlsx = () => import('xlsx').then((m) => { window.XLSX = m.utils ? m : m.default; });
       const { startPlanner } = await import('@/lib/planner-engine');
       if (!cancelled) startPlanner();
     })();
