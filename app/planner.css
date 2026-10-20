@@ -888,3 +888,9 @@ a.btn.primary{color:var(--accent-ink)}
 .lg-bkp{background:repeating-linear-gradient(90deg,#8a8f98 0 3px,#b9bdc4 3px 6px)}
 .lc.behind{position:relative}
 .lc.behind::after{content:"";position:absolute;top:5px;right:5px;width:6px;height:6px;border-radius:50%;background:var(--warn,#c77d00)}
+.fybar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px}
+.fyrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px}
+.rail-year{display:flex;align-items:center;gap:8px;margin:4px 10px 0}
+.rail-year label{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.rail-year select{flex:1;min-width:0}
+.yearban{border-left:3px solid var(--accent,#2b50d6);position:sticky;top:0;z-index:5}

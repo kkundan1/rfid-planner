@@ -208,6 +208,20 @@ The task owner (or the project lead or an admin) opens the task, or its row in F
 - If someone has the task open while its dates move, the form updates its dates on the spot with a note (“Dates updated because Vikram added leave”). If they had already changed the dates themselves, theirs are kept and the note says what the new dates would have been.
 - Each automatic move is listed in History ("Dates moved automatically …"), and the task form shows the holidays and leave inside the task's dates.
 
+## Financial year
+
+**Admin settings → Skills & calendar → Financial year** sets the month the year starts (April by default, so FY 2026-27 runs 1 Apr 2026 – 31 Mar 2027; choose January for calendar years). It is used wherever the planner shows a year:
+
+- **Resource load**: **Financial year** shows the twelve months of the chosen FY; **This quarter** is the current FY quarter (Q3 FY 2026-27 = Oct–Dec).
+- **Overview**: a **Projects in** filter shows the projects running in a year, with how many started, completed and were aborted in it.
+- **Daily log → Team diary**: pick a financial year to set the date range.
+- **Daily log → Monthly timesheet**: choose a financial year to see hours per person per month for the year (CSV and PDF export).
+- **Backup & export → Excel**: export one financial year (its projects with their tasks and milestones, and the follow-ups, daily log and history dated in it). The full backup (.json) always has everything.
+
+**Working in one year:** everyone has a **Year** picker in the left menu (above Projects; also on the Overview). Choosing a financial year limits every screen to it until you choose **All years** again: the project list, Overview and project pages show the projects running in that year; Follow-ups, Delays, History and the Daily log (diaries and timesheet) show what is dated in it; Resource load shows that year's months; the Excel export covers that year. A banner on every screen says which year is showing. The choice is each person's own (kept in their browser) and doesn't change what others see. Everything stays editable as usual (Completed and Aborted projects stay frozen as before), and the full backup and the stakeholder emails always cover everything.
+
+A project counts in a year when it was running at any time in it (from its start to when it was completed or aborted; open projects run to today or their target). Nothing is moved or hidden by the setting.
+
 ## Who can change what
 
 | Person | Can do |
@@ -302,6 +316,10 @@ These run inside the planner server and need no cron job. Set `STAKEHOLDER_UPDAT
 - **Admin settings → Backup & export** (admins): see the backups, **Back up now**, and **Download** any backup file. Keep a downloaded copy on another drive now and then: a backup on the same disk doesn't survive a disk failure.
 - **Save full backup (.json)** and **Download Excel (.xlsx)**: all planner data as one file / as readable sheets for audits. Passwords are never included.
 - **Restore from a backup**: choose a `.json` backup, check what it contains, then restore. Missing items are added back; tick the box to also replace items that differ. Nothing is deleted.
+  - The server puts everything back exactly as it was saved: Completed and Aborted projects with their status history and tasks, follow-ups, daily log, skills, holidays, team members, change history and who created what. Afterwards the planner checks that every item in the file is there and shows a summary.
+  - Logins come back from their saved passwords (save the backup with “Include user details…” ticked). Your own login is never changed.
+  - Restoring into a **new, empty planner**: set it up with the same login ID you used before. The restore then links your login to your team member from the backup (so you are lead of your projects again) and removes the empty one made at setup.
+  - Then restore the attachments with **Restore documents** (below) using the documents ZIP.
 - **Documents (attachments)**: **Download documents (.zip)** saves the uploaded files with their details (category, revision, remarks, who and when), for all projects or one project. **Restore documents** takes such a ZIP and adds back any files and details that are missing; nothing is overwritten or deleted, and each file is checked against its saved fingerprint. A ZIP re-packed with Windows or 7-Zip also works. Archives must stay under 4 GB (download one project at a time if needed).
 - Restoring a `.json` backup also brings back document details, where the file itself is still on the server.
 - Restoring a whole database file (`.db`): stop the planner, copy the backup over `planner.db`, start it again (see the table below).
