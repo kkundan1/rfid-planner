@@ -894,3 +894,8 @@ a.btn.primary{color:var(--accent-ink)}
 .rail-year label{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .rail-year select{flex:1;min-width:0}
 .yearban{border-left:3px solid var(--accent,#2b50d6);position:sticky;top:0;z-index:5}
+.bar.outs{background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.38) 0 5px,transparent 5px 10px);outline:1.5px dashed currentColor;outline-offset:-1.5px}
+.outsw{margin-top:2px}
+.lg-outs{display:inline-block;width:14px;height:10px;border-radius:2px;outline:1.5px dashed #555;background:repeating-linear-gradient(45deg,#bbb 0 3px,transparent 3px 6px)}
+.chip.bkp{background:color-mix(in srgb,var(--warn,#c77d00) 16%,var(--surface));color:var(--ink,inherit);border:1px solid color-mix(in srgb,var(--warn,#c77d00) 45%,transparent);font-size:11px;padding:1px 7px;border-radius:999px}
+.chip.bkd{background:color-mix(in srgb,var(--bad,#c62828) 12%,var(--surface));border:1px solid color-mix(in srgb,var(--bad,#c62828) 40%,transparent);font-size:11px;padding:1px 7px;border-radius:999px}

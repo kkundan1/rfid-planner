@@ -2,7 +2,7 @@
   "name": "rfid-rnd-planner",
   "version": "1.0.0",
   "private": true,
-  "description": "RFID R&D Planner – projects, tasks, follow-ups, resource load and Gantt export",
+  "description": "RFID R&D Planner \u2013 projects, tasks, follow-ups, resource load and Gantt export",
   "scripts": {
     "dev": "next dev -p 3000",
     "build": "next build",

@@ -270,11 +270,22 @@ The server enforces these rules.
 - Each person's average routine non-project work (meetings, support, admin) over the last 4 weeks of log entries (at least 3 logged days) is added to their future working days. Where time is booked ahead, the larger of the two counts.
 - The same figures are used everywhere: Resource load, the Load advisor (its cards show e.g. "incl. 5 h routine work"), the overload banner and Best fit.
 
+## Outsourced jobs
+
+Some tasks are done by a vendor; the team only follows up. In **Add task / Edit task**, tick **Outsourced job**:
+
+- **Effort needed** becomes **Timeline**: the vendor's time in days or weeks (1 week = 6 days). It is counted in working days **Monday to Saturday** (only Sundays off), and the end date follows from the start.
+- **Owner** becomes **Follow-up by**: that person gets the follow-up reminders, but the job adds **no hours** to anyone's load (Resource load, Load advisor, Best fit, overload warnings) and isn't listed under "Tasks missing effort".
+- The job doesn't move for our holidays, anyone's leave, booked time or the daily log. It does move when a task it waits on moves or is delayed, keeping its Mon–Sat timeline, and the tasks waiting on it follow as usual.
+- Follow-ups, milestones, Report delay and the project target work as for any task. On the timeline the bar is hatched with a dashed outline; the Excel export shows "Outsourced · 15 days" in the Effort column.
+
 ## Book time ahead and hours lost to other work
 
 The Daily log is for work already done; dates in the future can't be logged. For non-project work you already know is coming, use **Daily log → Book time ahead**.
 
-- A booking has dates, **hours a day**, a type (routine work, production support, meetings, training, travel, other), an optional project and a note, and can **repeat every week** until a date. Everyone books their own time; admins can book for anyone. Bookings start today or later; one already under way can only be ended early.
+- A booking has dates, **hours a day**, a type (routine work, production support, meetings, training, travel, or **Other** with your own name for it, e.g. “Vendor audit”), an optional **Project / Task** (pick a project, then optionally one of its tasks) and a note, and can **repeat every week** until a date. Bookings start today or later; one already under way can only be ended early.
+- **Booking a colleague's time:** pick another team member in **Team member**. The booking is sent as a request: it shows "Waiting for …" and counts nowhere until that person **accepts** it. They see a banner on every screen (Accept / Decline, or Review when there are several) and can decline with a reason. The person who asked sees "Declined: reason" in Book time ahead and can clear it, or **withdraw** a request still waiting. Accepted time then works like their own booking. The server enforces this: nobody can put time straight onto a colleague's calendar, change their profile or remove someone else's request.
+- Time booked on a task is work on that task: it doesn't take hours away from that same task, only from the person's other tasks.
 - **Productive hours a day minus booked hours** is what is left for project tasks. Each task works a set number of hours a day (its effort spread over its dates, or the whole productive day when it has no effort). When a day has less time left than the task needs, the lost hours add up and the task's end moves out; a **full-day booking works like leave**. Linked tasks, the project target (when it moves automatically) and the stakeholder emails follow, the same as for leave.
 - The same rule applies to the **Daily log**: on a day already logged, hours logged on anything other than the task itself (other projects, non-project work) are taken from that task's time. Logging, changing or deleting such an entry moves the dates straight away (and back).
 - Each task remembers the work it needs from when its plan was last set by hand, so repeated moves don't drift and cancelling a booking moves dates back.
